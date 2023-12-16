@@ -10,3 +10,9 @@
     
 
 }
+
+.weather-header {
+    font-size: 2rem;
+    color:white;
+    text-align: center;
+}
