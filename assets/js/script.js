@@ -1,17 +1,2 @@
-$(function () { 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- });
+console.log("connected");
