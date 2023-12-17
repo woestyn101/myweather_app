@@ -210,6 +210,16 @@ var url2 = "";
                 console.log(convertDate(data.list[34].dt));
                 date4.textContent = convertDate(data.list[34].dt);
 
+                console.log(data.list[34].main.temp);
+                temp4.textContent = data.list[34].main.temp;
+
+                console.log(data.list[34].wind.speed);
+
+                wind4.textContent = data.list[34].wind.speed;
+
+                console.log(data.list[34].main.humidity);
+                humidity4.textContent = data.list[34].main.humidity;
+
                  //outputting forecast day 5 weather information
 
                 console.log(convertDate(data.list[39].dt));
