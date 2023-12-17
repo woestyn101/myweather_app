@@ -16,3 +16,8 @@
     color:white;
     text-align: center;
 }
+
+#searchCity {
+    width: 100px;
+    margin-bottom: 10px;
+}
