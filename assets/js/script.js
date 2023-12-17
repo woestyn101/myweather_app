@@ -179,6 +179,17 @@ var url2 = "";
                 console.log(convertDate(data.list[18].dt));
                 date2.textContent = convertDate(data.list[18].dt);
 
+                console.log(data.list[18].main.temp);
+                temp2.textContent = data.list[18].main.temp;
+
+                console.log(data.list[18].wind.speed);
+
+                wind2.textContent = data.list[18].wind.speed;
+
+                console.log(data.list[18].main.humidity);
+                humidity2.textContent = data.list[18].main.humidity;
+
+
                  //outputting forecast day 3 weather information
 
                 console.log(convertDate(data.list[26].dt));
