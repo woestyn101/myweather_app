@@ -42,6 +42,9 @@ var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q="+ city +"&appid=" 
           }).then(function(data) {
             console.log(data);
 
+            myCity.textContent = data.city.name;
+            
+
              console.log(data.city.name);
              console.log(data.list[0].dt);
              console.log(data.list[0].dt_txt);
@@ -64,9 +67,17 @@ var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q="+ city +"&appid=" 
 
                 }
 
+                currentDate.textContent = convertDate(mydate);
 
+                console.log(data.list[0].main.temp);
+                temp.textContent = data.list[0].main.temp;
 
+                console.log(data.list[0].wind.speed);
 
+                wind.textContent = data.list[0].wind.speed;
+
+                console.log(data.list[0].main.humidity);
+                humidity.textContent = data.list[0].main.humidity;
 
 
 
