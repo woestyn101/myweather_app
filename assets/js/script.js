@@ -225,6 +225,17 @@ var url2 = "";
                 console.log(convertDate(data.list[39].dt));
                 date5.textContent = convertDate(data.list[39].dt);
 
+                console.log(data.list[39].main.temp);
+                temp5.textContent = data.list[39].main.temp;
+
+                console.log(data.list[39].wind.speed);
+
+                wind5.textContent = data.list[39].wind.speed;
+
+                console.log(data.list[39].main.humidity);
+                humidity5.textContent = data.list[39].main.humidity;
+
+
 
 
           })
