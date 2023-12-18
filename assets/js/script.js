@@ -10,7 +10,7 @@ var wind = document.querySelector("#wind");
 var humidity = document.querySelector("#humidity");
 var searchCity = document.querySelector("#searchCity");
 var searchBtn = document.querySelector("#searchBtn");
-var writeCity = document.querySelector("#writeCity");
+
 var currentWeatherImage = document.querySelector("#current-weather-image");
 
 //variables for day 1 forecast
@@ -48,10 +48,32 @@ var wind5 = document.querySelector("#wind5");
 var humidity5 = document.querySelector("#humidity5");
 var day5Image = document.querySelector("#day5Image");
 
+//prep for local storage
+
+var liE = document.createElement("li");
+
+var cityList = document.getElementById("cityList");
+
+var theCities = JSON.parse(localStorage.getItem("citiesHist")) || [];
+console.log(theCities)
 
 
+for (var i = 0; i < theCities.length; i++){
+  var liE = document.createElement("li");
+  liE.innerText = theCities[i];
+  cityList.appendChild(liE);
+  liE.addEventListener("click", checkCityHistory);
+ }
 
-
+    function checkCityHistory(){
+      console.log(this.innerText);
+      city = this.innerText;
+      searchCity.value = this.innerText;
+      var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q="+ city +"&appid=" + mykey
+  
+     // call function to get city and coordinates
+      getCoords(urlGeo);
+    }
 var city = "Akron";
 
 // search city button and function
@@ -98,6 +120,7 @@ var url2 = "";
  var mylat;
 
   function getCoords(myurl){
+    
     fetch(myurl)
     .then(function(response){
         return response.json();
@@ -117,19 +140,23 @@ var url2 = "";
             console.log(data);
 
             myCity.textContent = data.city.name;
-            
+           
 
              console.log(data.city.name);
              console.log(data.list[2].dt);
              console.log(data.list[2].dt_txt);
             
-            //     var theTimeStamp = data.list[0].dt;
-            //  var mydate = new Date(theTimeStamp * 1000);
-            //  console.log(mydate.getFullYear());
-            //  console.log(mydate. getDate());
-            //  console.log(mydate.getMonth() + 1);
+         
+                    // prep for local storage
+                   
+                                      
+
+                    theCities.push(searchCity.value);
+                    console.log(theCities);
+
+                    localStorage.setItem("citiesHist", JSON.stringify(theCities));
+         
                  
-                    //console.log(convertDate(mydate)) ;
 
 
                     //convert date from unix timestamp
@@ -193,7 +220,7 @@ var url2 = "";
                   else if (weatherCondition === "Thunderstorm")
                   {
                     console.log("It is thundering");
-                  theImagee.src = "https://openweathermap.org/img/wn/10d@2x.png";
+                  theImage.src = "https://openweathermap.org/img/wn/10d@2x.png";
                   }
                   else if (weatherCondition === "Snow")
                   {
@@ -209,31 +236,8 @@ var url2 = "";
 
                  }
 
-               
-
-              
-          //       if (data.weather[0].main == "Clear"){
-          //         wImage.src = "https://openweathermap.org/img/wn/01d@2x.png";
-          //  }
-          //   else if (data.weather[0].main == "Clouds"){
-          //         wImage.src = "https://openweathermap.org/img/wn/02d@2x.png";
-          //  }
-          //   else if (data.weather[0].main == "Rain"){
-          //         wImage.src = "https://openweathermap.org/img/wn/10d@2x.png";
-          //  }
-          //   else if (data.weather[0].main == "Drizzle"){
-          //         wImage.src = "https://openweathermap.org/img/wn/09d@2x.png";
-          //  }
-          //   else if (data.weather[0].main == "Thunderstorm"){
-          //         wImage.src = "https://openweathermap.org/img/wn/11d@2x.png";
-          //  }
-          //   else if (data.weather[0].main == "Snow" || data.weather[1].main == "Snow"){
-          //         wImage.src = "https://openweathermap.org/img/wn/13d@2x.png";
-          //  }
-          //  else {
-          //    wImage.src = "https://openweathermap.org/img/wn/50d@2x.png";
-          //       }
-
+                          
+          
               
 
                 //outputting forecast day 1 weather information
@@ -339,14 +343,3 @@ var url2 = "";
     
  
 
-
-// fetch(url2)
-// .then(function(response){
-//     return response.json();
-
-// }).then (function(data){
-//     console.log(data);
-//     console.log(data.city.name);
-//     console.log(data.list[0].dt);
-   
-// })
