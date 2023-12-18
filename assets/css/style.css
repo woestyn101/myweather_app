@@ -4,10 +4,19 @@
 
 }
 
+#currentDate {
+    margin-right: 10px;
+}
+
 #mainCity {
     display: flex;    
     align-items: center;  
     
+
+}
+
+#myCity {
+    margin-right: 10px;
 
 }
 
