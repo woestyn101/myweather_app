@@ -65,10 +65,12 @@ console.log(theCities)
       console.log(this.innerText);
       city = this.innerText;
       searchCity.value = this.innerText;
-      var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q="+ city +"&appid=" + mykey
+      var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + mykey;
+
+      var url_city = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&appid=" + mykey;
   
      // call function to get city and coordinates
-      getCoords(urlGeo);
+      getCoords(url_city);
     }
 var city = "Akron";
 
@@ -81,10 +83,10 @@ function searchTheCity (){
    console.log("button clicked");
     console.log(searchCity.value);
     city = searchCity.value;
-    var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q="+ city +"&appid=" + mykey
-
+    // var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q="+ city +"&appid=" + mykey
+    var url_city = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=" + mykey;
    // call function to get city and coordinates
-    getCoords(urlGeo);
+    getCoords(url_city);
 
 
 }
@@ -124,10 +126,10 @@ var url2 = "";
     
     }).then (function(data){
         console.log(data);
-          console.log(data[0].lon)
-          console.log(data[0].lat)
-          mylon = data[0].lon;
-          mylat = data[0].lat;
+          console.log(data.coord.lon)
+          console.log(data.coord.lat)
+          mylon = data.coord.lon;
+          mylat = data.coord.lat;
 
           url2 = "https://api.openweathermap.org/data/2.5/forecast?lat="+ mylat+ "&lon="+ mylon + "&appid=" + mykey  + "&units=imperial";
 
