@@ -1,30 +1,30 @@
-# Quiz Game OSU Bootcamp challenge 4
+# Weather app OSU Bootcamp challenge 6
 
 ## Description
 
-This project challenged me to use javascript to create html elements.
+This project challenged me to use api data in html page..
 
 During this project I learned how to:
 
-- work with timers.
-- create html elements with Javascript and assign id or classes to them.
-- use the event parameter on functions.
-- add eventlisteners to html elements and buttons.
-- Change styling of elements with javasript
-- use localStorage to save data from user input.
+- fetch an api from a website.
+- fetch 2 api's at the same time.
+- work with an api-key.
+- access data of an api-object.
+- add search capabilities for an api object.
+- output api data to a html page.
 - use stringify and parse with json objects.
 - declare an object and save to local storage.
 
 ## Link to website
 
-https://woestyn101.github.io/mod4Quiz/
+https://woestyn101.github.io/myweather_app/
 
 ## Installation (N/A)
 
 ## Usage
 
-The code can be used to review how html pages can be created
-width Javascript and enable the user to interact with the page content.
+The code can be used to review how to fetch api date from
+a website and use it on with search capabilites for a project.
 
 ## Screenshot of website
 
@@ -39,6 +39,8 @@ https://www.youtube.com/watch?v=MIYQR-Ybrn4
 https://www.youtube.com/watch?v=nGVoHEZojiQ
 
 https://www.youtube.com/watch?v=cuEtnrL9-H0
+
+https://www.w3schools.com/jsref/jsref_includes_array.asp
 
 https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
 
