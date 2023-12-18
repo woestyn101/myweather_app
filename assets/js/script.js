@@ -77,6 +77,7 @@ var city = "Akron";
 searchBtn.addEventListener("click", searchTheCity);
 
 function searchTheCity (){
+  cityList.replaceChildren();
    console.log("button clicked");
     console.log(searchCity.value);
     city = searchCity.value;
