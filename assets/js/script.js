@@ -58,14 +58,10 @@ var theCities = JSON.parse(localStorage.getItem("citiesHist")) || [];
 console.log(theCities)
 
 
-for (var i = 0; i < theCities.length; i++){
-  var liE = document.createElement("li");
-  liE.innerText = theCities[i];
-  cityList.appendChild(liE);
-  liE.addEventListener("click", checkCityHistory);
- }
+
 
     function checkCityHistory(){
+      cityList.replaceChildren();
       console.log(this.innerText);
       city = this.innerText;
       searchCity.value = this.innerText;
@@ -148,15 +144,30 @@ var url2 = "";
             
          
                     // prep for local storage
-                   
-                                      
 
-                    theCities.push(searchCity.value);
+                   
+                   
+                         console.log(theCities);       
+                         if (theCities.includes(searchCity.value)){
+                          theCities;
+                          } else if (searchCity.value == ""){
+                            theCities;
+                          } else {
+                            theCities.push(searchCity.value);
+                        
+                          }
+
+                    //theCities.push(searchCity.value);
                     console.log(theCities);
 
                     localStorage.setItem("citiesHist", JSON.stringify(theCities));
          
-                 
+                    for (var i = 0; i < theCities.length; i++){
+                      var liE = document.createElement("li");
+                      liE.innerText = theCities[i];
+                      cityList.appendChild(liE);
+                      liE.addEventListener("click", checkCityHistory);
+                     }
 
 
                     //convert date from unix timestamp
@@ -331,15 +342,16 @@ var url2 = "";
                 console.log(data.list[39].weather[0].main);
                 imageChange(data.list[39].weather[0].main, day5Image)
 
-
+               
 
 
           })
          
     })
+   
   }
     
   
-    
+
  
 
