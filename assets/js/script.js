@@ -65,7 +65,7 @@ console.log(theCities)
       console.log(this.innerText);
       city = this.innerText;
       searchCity.value = this.innerText;
-      var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + mykey;
+      // var urlGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + mykey;
 
       var url_city = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&appid=" + mykey;
   
