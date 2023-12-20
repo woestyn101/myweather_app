@@ -401,6 +401,7 @@ major_uscities11 = ['Pinellas Park', 'Edina', 'Herriman', 'Elyria', 'Grand Islan
 
 $("#searchCity").autocomplete({
   source: morecities
+  
 });
    
     });
