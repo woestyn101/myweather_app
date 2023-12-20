@@ -118,3 +118,48 @@ li{
    
   }
 
+
+  /* CSS */
+  .button-22 {
+    align-items: center;
+    appearance: none;
+    background-color: #e60026;
+    background-image: linear-gradient(1deg, #ae2029, #e30022 99%);
+    background-size: calc(100% + 20px) calc(100% + 20px);
+    border-radius: 100px;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: CircularStd,sans-serif;
+    font-size: 1rem;
+    height: auto;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 3px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s,background-position .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  
+  .button-22:active,
+  .button-22:focus {
+    outline: none;
+  }
+  
+  .button-22:hover {
+    background-position: -20px -20px;
+  }
+  
+  .button-22:focus:not(:active) {
+    
+    box-shadow: rgb(190,0,50)  0 0 0 .125em;
+  }

@@ -11,6 +11,7 @@ var humidity = document.querySelector("#humidity");
 var searchCity = document.querySelector("#searchCity");
 var searchBtn = document.querySelector("#searchBtn");
 var errorMessage = document.querySelector("#err-message");
+var clearBtn = document.querySelector("#clearBtn");
 
 var currentWeatherImage = document.querySelector("#current-weather-image");
 
@@ -60,7 +61,7 @@ console.log(theCities)
 
 
 
-
+// function to display weather condition when city in search history is clicked
     function checkCityHistory(){
       cityList.replaceChildren();
       console.log(this.innerText);
@@ -178,7 +179,13 @@ var url2 = "";
 
                     localStorage.setItem("citiesHist", JSON.stringify(theCities));
 
+                    
+
                      theCities.reverse();
+
+                     
+                                    
+                     
          
                     for (var i = 0; i < theCities.length; i++){
                       var liE = document.createElement("li");
@@ -368,9 +375,17 @@ var url2 = "";
     })
    
   }
+
+  
+clearBtn.addEventListener("click", clearHistory);
+
+function clearHistory(){
+   localStorage.removeItem("citiesHist");
+   window.location.reload();
+}
     
   
-     // attay list of cities for autocomplete
+     // array list of cities for autocomplete
  
   $(function () { 
    
