@@ -31,27 +31,35 @@
     margin-bottom: 10px;
 }
 
+.search-col {
+   
+    text-align: center;
+}
+
 li{
     cursor: pointer;
     list-style-type: none;
     border-radius: 10px;
     background-color: #ec6e4c;
     color: white;
-    margin:10px;
+    margin:2px;
     margin-bottom: 15px;
-    width: 90%;
+    width: 100%;
     padding: 5px;
     text-align: left;
 }
 
 #citiesHistory {
-    text-align: center;   
+    text-align: center;  
+    list-style-type: none; 
+    width: 100%;
     
 }
 
 #cityList {
-    text-align: center;
+    text-align: left;
     list-style-type: none;
+    width: 100%;
     
 }
 
