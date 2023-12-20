@@ -177,6 +177,8 @@ var url2 = "";
                     console.log(theCities);
 
                     localStorage.setItem("citiesHist", JSON.stringify(theCities));
+
+                     theCities.reverse();
          
                     for (var i = 0; i < theCities.length; i++){
                       var liE = document.createElement("li");
@@ -368,7 +370,7 @@ var url2 = "";
   }
     
   
-
+     // attay list of cities for autocomplete
  
   $(function () { 
    
