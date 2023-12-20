@@ -10,6 +10,7 @@ var wind = document.querySelector("#wind");
 var humidity = document.querySelector("#humidity");
 var searchCity = document.querySelector("#searchCity");
 var searchBtn = document.querySelector("#searchBtn");
+var errorMessage = document.querySelector("#err-message");
 
 var currentWeatherImage = document.querySelector("#current-weather-image");
 
@@ -122,9 +123,21 @@ var url2 = "";
     
     fetch(myurl)
     .then(function(response){
+      if (response.status == 404){
+        errorMessage.textContent = "City mispelled";
+      }
+      if (response.status == 200){
+        errorMessage.textContent = "";
+      }
         return response.json();
+        
+      
+       
+     
+      
     
     }).then (function(data){
+      
         console.log(data);
           console.log(data.coord.lon)
           console.log(data.coord.lat)

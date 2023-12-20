@@ -105,3 +105,8 @@ li{
     box-shadow: #505150;
   }
 
+  #err-message {
+    color: red;
+   
+  }
+
